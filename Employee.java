@@ -1,57 +1,30 @@
 package com.niit.hiber;
-//A Simple POJO Example
+
+import java.util.Set;
 public class Employee {
 
-	private int id;
-	private String firstName;
-	private String lastName;
-	private int salary;
+	private int employeeId;
+	private String employeeName;
+	private Set<String> phoneNumbers;
 	
-	public Employee() {
-		super();
+	public int getEmployeeId() {
+		return employeeId;
 	}
-
-	public Employee(int id, String firstName, String lastName, int salary) {
-		super();
-		this.id = id;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.salary = salary;
+	public void setEmployeeId(int employeeId) {
+		this.employeeId = employeeId;
 	}
-
-	public int getId() {
-		return id;
+	public String getEmployeeName() {
+		return employeeName;
 	}
-
-	public void setId(int id) {
-		this.id = id;
+	public void setEmployeeName(String employeeName) {
+		this.employeeName = employeeName;
 	}
-
-	public String getFirstName() {
-		return firstName;
+	public Set<String> getPhoneNumbers() {
+		return phoneNumbers;
 	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setPhoneNumbers(Set<String> phoneNumbers) {
+		this.phoneNumbers = phoneNumbers;
 	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	public int getSalary() {
-		return salary;
-	}
-
-	public void setSalary(int salary) {
-		this.salary = salary;
-	}
-	
-	
 	
 	
 }

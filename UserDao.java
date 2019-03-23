@@ -7,23 +7,21 @@ import org.hibernate.cfg.Configuration;
 
 public class UserDao {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	public static int register(User u)
+	{
+		int cnt=0;
 		Configuration cfg=new Configuration();
 		cfg.configure("hibernate.cfg.xml");
 		SessionFactory sf=cfg.buildSessionFactory();
 		Session session=sf.openSession();
 		Transaction t=session.beginTransaction();
+		t.begin();
 		
-		User u1=new User();
-		u1.setName("Mohit");
-		u1.setEmail("mohitmalhotra08@gmail.com");
-		u1.setPassword("mohit#456");
-		
-		session.save(u1);
+		cnt=(Integer)session.save(u);  //it is inserting the values
 		t.commit();
-		System.out.println("Successfully Saved");
-	}
+		session.close();
+		return cnt;
+		
 
+	}
 }
