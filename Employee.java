@@ -1,30 +1,39 @@
-package com.niit.hiber;
-
-import java.util.Set;
-public class Employee {
-
-	private int employeeId;
-	private String employeeName;
-	private Set<String> phoneNumbers;
-	
-	public int getEmployeeId() {
-		return employeeId;
-	}
-	public void setEmployeeId(int employeeId) {
-		this.employeeId = employeeId;
-	}
-	public String getEmployeeName() {
-		return employeeName;
-	}
-	public void setEmployeeName(String employeeName) {
-		this.employeeName = employeeName;
-	}
-	public Set<String> getPhoneNumbers() {
-		return phoneNumbers;
-	}
-	public void setPhoneNumbers(Set<String> phoneNumbers) {
-		this.phoneNumbers = phoneNumbers;
-	}
-	
-	
-}
+package com.niit.hiberannotation;
+import javax.persistence.*;
+@Entity  
+@Table(name="emp")  
+public class Employee {    
+      
+    @Id  
+    @GeneratedValue(strategy=GenerationType.AUTO)  
+    @PrimaryKeyJoinColumn  
+private int employeeId;    
+private String name,email;    
+@OneToOne(targetEntity=Address.class,cascade=CascadeType.ALL)  
+private Address address;  
+public int getEmployeeId() {  
+    return employeeId;  
+}  
+public void setEmployeeId(int employeeId) {  
+    this.employeeId = employeeId;  
+}  
+public String getName() {  
+    return name;  
+}  
+public void setName(String name) {  
+    this.name = name;  
+}  
+public String getEmail() {  
+    return email;  
+}  
+public void setEmail(String email) {  
+    this.email = email;  
+}  
+public Address getAddress() {  
+    return address;  
+}  
+public void setAddress(Address address) {  
+    this.address = address;  
+}    
+  
+}    

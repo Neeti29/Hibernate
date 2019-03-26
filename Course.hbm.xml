@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 26, 2019 12:22:38 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.niit.hiberannotation.Course" table="COURSE">
+        <id name="courseId" type="int">
+            <column name="COURSEID" />
+            <generator class="native" />
+        </id>
+        <property name="courseName" type="java.lang.String">
+            <column name="COURSENAME" />
+        </property>
+        <property name="duration" type="int">
+            <column name="DURATION" />
+        </property>
+        <set name="students" table="students_courses" inverse="false" lazy="true" cascade="all">
+            <key>
+                <column name="COURSEID" />
+            </key>
+            <many-to-many class="com.niit.hiberannotation.Student" column="studentId" />
+        </set>
+    </class>
+</hibernate-mapping>

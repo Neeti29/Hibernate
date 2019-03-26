@@ -6,15 +6,19 @@
 <hibernate-configuration>  
   
 <session-factory>  
- <property name="hbm2ddl.auto">update</property>  
- <property name="dialect">org.hibernate.dialect.MySQLDialect
+ <property name="hibernate.hbm2ddl.auto">update</property>  
+ <property name="dialect">org.hibernate.dialect.MySQL5Dialect
 </property>  
  <property name="connection.url">jdbc:mysql://localhost:3307/mysqljdbc</property>  
  <property name="connection.username">root</property>  
  <property name="connection.password">connection</property>  
- <property name="connection.driver_class">com.mysql.jdbc.Driver</property>  
+ <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>  
       
- <mapping resource="Employee.hbm.xml"/>  
+<!--  <mapping resource="Person.hbm.xml"/>   -->
+
+<mapping class="com.niit.hiberannotation.Student"/>
+ <mapping class="com.niit.hiberannotation.Course"/>
+ 
  </session-factory>  
   
 </hibernate-configuration>  

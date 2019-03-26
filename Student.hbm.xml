@@ -1,29 +1,26 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated Mar 24, 2019 9:54:14 PM by Hibernate Tools 3.5.0.Final -->
+<!-- Generated Mar 26, 2019 12:10:30 AM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="com.niit.hiber.Student" table="STUDENT100">
+    <class name="com.niit.hiberannotation.Student" table="STUDENT">
         <id name="studentId" type="int">
             <column name="STUDENTID" />
-            <generator class="increment" />
+            <generator class="native" />
         </id>
-        <property name="firstName" type="java.lang.String">
-            <column name="FIRSTNAME" />
+        <property name="StudentName" type="java.lang.String">
+            <column name="STUDENTNAME" />
         </property>
-        <property name="lastName" type="java.lang.String">
-            <column name="LASTNAME" />
+        <property name="marks" type="int">
+            <column name="MARKS" />
         </property>
-        <property name="rollNo" type="java.lang.String">
-            <column name="ROLLNO" />
-        </property>
-        <property name="age" type="int">
-            <column name="AGE" />
-        </property>
-        
-        <component name="studentClass" class="com.niit.hiber.StudentClass">
-        	<property name="classId" column="Class_Id" type="string"/>
-        	<property name="className" column="class_Name" type="string"/>
-        </component>
+        <set name="courses" table="student_courses" inverse="false" lazy="true" cascade="all">
+            <key>
+                <column name="STUDENTID" />
+            </key>
+            
+            <many-to-many class="com.niit.hiberannotation.Course" column="courseId" />
+           
+        </set>
     </class>
 </hibernate-mapping>

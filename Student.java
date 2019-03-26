@@ -1,40 +1,37 @@
-//Pojjo class
-package com.niit.mockito;
+package com.niit.hiberannotation;
+
+import java.util.Set;
 
 public class Student {
 
-	private String rollno;
-	private String firstname;
-	private String lastname;
-	private String dept;
+	private int studentId;
+	private String StudentName;
+	private int marks;
+	private Set<Course> courses;
 	
-	public String getRollno() {
-		return rollno;
+	public int getStudentId() {
+		return studentId;
 	}
-	public void setRollno(String rollno) {
-		this.rollno = rollno;
+	public void setStudentId(int studentId) {
+		this.studentId = studentId;
 	}
-	public String getFirstname() {
-		return firstname;
+	public String getStudentName() {
+		return StudentName;
 	}
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+	public void setStudentName(String studentName) {
+		StudentName = studentName;
 	}
-	public String getLastname() {
-		return lastname;
+	public int getMarks() {
+		return marks;
 	}
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
+	public void setMarks(int marks) {
+		this.marks = marks;
 	}
-	public String getDept() {
-		return dept;
+	public Set<Course> getCourses() {
+		return courses;
 	}
-	public void setDept(String dept) {
-		this.dept = dept;
-	}
-	public String toString()
-	{
-		return "\n Roll no:"+rollno+"\n FirstName:"+firstname+"\n Lastname:"+lastname+"\n Dept:"+dept;
+	public void setCourses(Set<Course> courses) {
+		this.courses = courses;
 	}
 	
 	
